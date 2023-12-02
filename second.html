@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Hobby</title>
+  
+  <link rel="stylesheet" href="fp.css">
+  
+  <div class="titl">
+    <h1>Hobby</h1>
+  </div>
+  <style>
+    img {
+      border: 15px black ridge;
+    }
+    
+.slider-container {
+  height:2%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -35%;
+}
+
+.slide {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.slide:nth-child(1) {
+  display: block;
+}
+
+.prev-btn,
+.next-btn {
+  font-size: 30px;
+  background-color: blue;
+  color: white;
+  position: absolute;
+  transform: translateY(-5%);
+  top: 0%;
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    
+  <div class="pages">
+    
+       <h4>
+         <a href="home.html" target="_self" style="padding-left: 40px;">Home Page</a>
+         <a href="firstpage.html" target="_self">About Me</a>
+         <a style="color: red;">My Hobby</a>
+       <a href="third.html" target="_self">Educational Page</a><a href="fourth.html" target="_self">Contact Me!</a> </h4>
+     </div>
+     
+  <div class="inf">
+    <h2>On my free time, I am often
+    drawing. I discovered digital art during the pandemic and ever since then, it became one of my past times.</h2>
+    <br>
+    <h2>These are some of my artworks:</h2>
+  
+  <div class="slider-container">
+      <center>
+       <img src="art4.png" length="90%" width="90%" class="slide"> <br>
+      <img src="art5.png" length="90%" width="90%" class="slide"><br>
+      <img src="art3.png" length="90%" width="90%" class="slide"><br>
+      <img src="art11.png" length="90%" width="90%" class="slide"><br></center>
+      <button class="prev-btn"> Previous </button>
+      <button class="next-btn"> Next </button>
+  </div>
+  <div class="socials" style="margin-top: 40%;">
+    <hr>
+   <h4>Visit my profiles below ▽</h4>
+    <p><a href="https://www.facebook.com/christinejhun.tagalog" target="_blank">
+        <img src="fb.png" width="90px" style="display: inline-block; border: 2px white solid; border-radius: 90px;">
+      </a>
+    
+      <a href="https://github.com/Cj-Twenty7" target="_blank">
+        <img src="github.png" width="95px" style="display:inline-block;background-color: black; border-radius: 100%; border: 2px solid black;">
+      </a>
+    </p>
+  </div>
+  
+  </div>
+  
+  
+ </div>
+ 
+ <script>
+   const slides = document.querySelectorAll('.slide');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+let currentSlideIndex = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.style.display = i === index ? 'block' : 'none';
+  });
+  currentSlideIndex = index;
+}
+
+prevBtn.addEventListener('click', () => {
+  const prevSlideIndex = currentSlideIndex === 0 ? slides.length - 1 : currentSlideIndex - 1;
+  showSlide(prevSlideIndex);
+});
+
+nextBtn.addEventListener('click', () => {
+  const nextSlideIndex = currentSlideIndex === slides.length - 1 ? 0 : currentSlideIndex + 1;
+  showSlide(nextSlideIndex);
+});
+ </script>
+</body>
+
+</html>
